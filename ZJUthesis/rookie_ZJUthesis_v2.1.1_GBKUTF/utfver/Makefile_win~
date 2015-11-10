@@ -1,0 +1,25 @@
+FileName=论文模版示例
+PDFPara=
+TEXPara=
+
+$(FileName).pdf : $(FileName).tex
+	xelatex $(TEXPara) $(FileName)
+	makeindex $(FileName).idx
+	bibtex $(FileName) 
+	xelatex $(TEXPara) $(FileName)
+	xelatex $(TEXPara) $(FileName)
+
+clear :
+	-del $(FileName).aux
+	-del $(ileName).log
+	-del $(FileName).pdf
+	-del $(FileName).toc
+	-del $(FileName).idx
+	-del $(FileName).ind
+	-del $(FileName).out
+	-del $(FileName).bbl
+	-del $(FileName).lof
+	-del $(FileName).lot
+	-del $(FileName).ilg
+	-del $(FileName).blg
+
