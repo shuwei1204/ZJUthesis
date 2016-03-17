@@ -1,0 +1,100 @@
+\documentclass{beamer}
+\usepackage{ctex}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{upgreek}
+%这一句应用PPT的模板，现在有几种可选。
+% beamer有Warsaw，Madrid，Pittsburgh，Rochester，等以城市命名的若干模版
+% 这些模板的式样可以在/usr/share/texmf/doc/latex/beamer目录中找到相应的例子，
+% 根据例子选择合适的模版即可
+\usetheme{Warsaw}
+
+\title{题目第一行\\题目第二行}
+\author[WANG]{王东举}
+\date{2015年6月12日}
+% 这个地方对颜色进行设置，设置题目的颜色是80％的黑色混合20％的黑色
+%\setbeamercolor{title}{fg=red!90!black}
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{目录}
+\tableofcontents
+
+\end{frame}
+
+
+\section{第一章}
+
+\begin{frame}
+\frametitle{绪论}
+\framesubtitle{小标题}
+这是frame里面的正文部分
+\begin{enumerate}
+	\item{}内容1
+	\item{}内容2
+	\item{}内容3
+\end{enumerate}
+\end{frame}
+	
+\section{第二章}
+\begin{frame}
+	\frametitle{block环境}
+	\framesubtitle{小标题}
+	这是frame里面的正文部分
+	\begin{block}{这是一个block}
+		这个block可以用来写一些定义等。
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{一个图片的例子}	
+	\includegraphics[width = 0.6\textwidth]{../Pictures/LHS.eps}
+\end{frame}
+
+\begin{frame}
+	\frametitle{columns分列}	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}			
+			\includegraphics[width = 0.8\textwidth]{../Pictures/LHS.eps}
+		\end{column}
+		\begin{column}{0.5\textwidth}			
+			\begin{enumerate}
+				\item{}内容1
+				\item{}内容2
+				\item{}内容3
+			\end{enumerate}			
+		\end{column}
+	\end{columns}	
+\end{frame}
+	
+	\begin{frame}
+		\frametitle{一个表格的例子}	
+		\begin{table}[htb]
+			\centering
+			\begin{tabular}[t]{c|l|r|p{4cm}}
+				\hline
+				居中 & 靠左 & 靠右 & 靠左宽4cm\\
+				\hline
+				Center & Left & Right & Width=4cm\\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{一个依次出现的例子}	
+		\begin{itemize}
+			\item 这是第一个例子
+			\pause
+			\item 这是第二个例子
+			\pause
+			\item 这是第三个例子
+		\end{itemize}
+	\end{frame}
+
+\end{document}

@@ -1,0 +1,372 @@
+\chapter{其他一些反馈的问题}
+
+以下将对一些在这个模版发布两年间，
+使用的各位网友发给我邮件询问相关问题的内容的解答作一个集中记录。
+其中的一些问题及我提供的解决方案可以供广大有不同需要的网友们参考。
+
+\section{关于使用author year 参考文献引用方式的问题}
+
+这是我收到的第一封回复邮件，
+问题相对比较简单，
+是一个叫Jerry Chen的网友提给我的，
+这个模版默认是使用数字编号对标示参考文献引用的，
+Jerry Chen 网友希望使用author year这种格式进行参考文献的标注。
+就像如下的格式。
+
+\begin{center}
+\begin{tabular}{p{3cm}cp{5cm}}
+$\backslash$citet\{jon90\} & --> & Jones et al. (1990) \\
+\end{tabular}
+\end{center}
+
+要实现这个显示校果，需要对ZJUthesis.cls文件以及ZJUthesis.bst文件进行修改，
+其中对ZJUthesis.bst文件修改可以通过修改dbjfile\_wdj\_V1.0.dbj文件的方式进行修改。
+分别如下：
+
+\begin{itemize}
+\item{ZJUthesis.cls文件中}
+
+第41行是关于正文中参考文献引用标记格式设置的。
+把它由数字排序方式变为作者年代的排序方式，即
+由：
+
+{
+\zihao{-5}
+\verb+\RequirePackage[sort&compress,longnamesfirst,square,super]{natbib}+
+}
+
+修改为：
+
+{
+\zihao{-5}
+\verb+\RequirePackage[longnamesfirst,round,authoryear]{natbib}+
+}
+
+第654行是关于正文后参考文献列表的结构格式，
+将其由数字标号方式改为作者年代标记方式。
+即由：
+
+{
+\zihao{-5}
+\verb+\setcitestyle{numbers, round, comma, aysep={}, yysep={,}, notesep={,}}+
+}
+
+修改为：
+
+{
+\zihao{-5}
+\verb+\setcitestyle{authoryear, round, comma, aysep={}, yysep={,}, notesep={,}}+
+}
+
+\item{dbjfile\_wdj\_v1.0.dbj文件中}
+
+对选项
+\%STYLE OF CITATIONS: 
+修改为:  ay
+
+对选项
+\%MAX AUTHORS BEFORE ET AL: (if regular cite not selected)
+修改为:  mct-1,\%: One et al
+
+\end{itemize}
+
+然后再生成新的ZJUthesis.bst文件即可，该文件的生成方式见第五章内容中介绍。
+
+\section{关于chapter居中格式的问题}
+
+这个模版中，每一章的标题默认是左对齐设置的，
+当然有的同学想设置成居中，比如给我发邮件的dongliang同学。这个也很简单，
+只要修改ZJUthesis.cls文件中的第569行，
+由：
+
+{
+\zihao{-5}
+\verb+\CTEXsetup[format={\noindent}]{chapter}+
+}
+
+修改为：
+
+{
+\zihao{-5}
+\verb+\CTEXsetup[format={\centering}]{chapter}+
+}
+
+即可，关于该处设置的含义可以参考CTeX自带的帮助文档ctex.pdf。
+
+
+\section{关于章级目录有时居中有时不居中的解决方案}
+
+这个问题有点儿类似上面的情况，
+要求更复杂一些，是由叫zwb的网友提给我的。
+但这个问题的解决方案更简单，只要在需要居中的章节前加上
+
+{
+\zihao{-5}
+\verb+\CTEXsetup[format={\centering}]{chapter}+
+}
+
+在需要左对齐的章名前加上
+
+{
+\zihao{-5}
+\verb+\CTEXsetup[format={\noindent}]{chapter}+
+}
+
+即可。
+
+
+\section{关于标题两行还写不下的问题}
+
+这是一个叫FRW的同学提给我的，Ta的标题太长，
+我的模版里只设置了两行写标题，需要第三行，
+这就需要修改ZJUthesis.cls文件来适应这个问题了。
+其实跟添加第二行的方式一样，只是增加了一个第三行内容的命令及
+与第二行相同的判断。
+
+首先增加两个命令
+$\backslash$EtitleB 和 $\backslash$englishtitleB，
+再对这两个命令的使用位置进行定义。
+
+这两个命令的定义语句如下：
+
+{\zihao{-5}
+\verb+\newcommand\EtitletB[1]{\def\ZJU@value@EtitletB{#1}}+
+
+\verb+\newcommand\englishtitletB[1]{\def\ZJU@value@englishtitletB{#1}}+
+}
+
+在两处对标题多行判断的后面加上这样几句：
+
+\begin{itemize}
+\item{在首页上的题目部分}
+
+{
+\zihao{-5}
+\begin{verbatim}
+        \fi\\[3mm]
+        % 第三行英文标题
+        &
+        \ifx\ZJU@value@EtitletB\undefined
+	  \hfil
+	\else
+	  {\bfseries\zihao{-2}\ZJUunderline[260pt]{\ZJU@value@EtitletB}}
+        \fi\\
+\end{verbatim}
+}
+第一行的\verb+\fi\\[3mm]+意思是从这个\verb+\\fi\\+处后面开始加代码，
+这个3mm是为了每一行高度都一样设置，这个从上面第一行最后一句就可以看出来。
+增加代码中的“\&”符号是因为这个地方用的是tabular环境用于对齐。
+
+\item{在英文标题页的部分}
+
+{
+\zihao{-5}
+\begin{verbatim}
+% 判断英文标题有无第三行
+      \ifx\ZJU@value@englishtitletB\undefined
+        \hfil
+      \else
+        \ZJUunderline[300pt]{\ZJU@value@englishtitletB}
+      \fi}
+\end{verbatim}
+}
+
+增加的代码与上面一条类似，不再多述。
+
+\end{itemize}
+
+
+\section{目录层次与子目录分层缩进}
+
+FRW同学还提出了另一个问题，
+这个模版的目录中只有两层标题，想要三层标题，
+而且这个模版中目录两层标题的字体字号都一样，
+想要不同层次有不同缩进。
+这个问题也容易解决，都在ZJUthesis.cls中有相应命令设置。
+第601至第620行是关于目录的格式设置，
+比如增加及修改下面的所列，就可以满足上面的要求。
+
+{
+\zihao{-5}
+\begin{verbatim}
+  \renewcommand{\cftsecpagefont}{\rm\zihao{-4}}
+  \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdot}}
+  \renewcommand{\cftsubsecfont}{\fangsong\zihao{-4}}
+  \renewcommand{\cftsubsecdotsep}{\cftdotsep}
+  \renewcommand{\cftsubsecpagefont}{\rm\zihao{-4}}
+  \setlength{\cftbeforechapskip}{-2pt}
+  \setlength{\cftbeforesecskip}{-2pt}
+  \setlength{\cftbeforesubsecskip}{-2pt}
+  \setlength{\cftsecindent}{2eM}
+  \setlength{\cftsubsecindent}{4eM}
+  \setcounter{tocdepth}{2}
+\end{verbatim}
+}
+
+这几句增加了subsection一级的目录显示格式，
+把section及subsecion目录列表前面的缩进设置为2个字符和4个字符，
+最后又把目录的显示深度由原来的1设置为2，就可以显示三级标题了。
+
+\section{关于分章参考文献的用法}
+
+这个模版里头的参考文献是一个章节格式的，
+全文只有一个参考文献章，这是一个一般的情况。
+当然有的同学希望能采用每一章都有自己参考文献的解决方案。
+这个方案也比较简单，只用修改如下几个地方。
+
+\begin{enumerate}
+\item{使用chapterbib包}
+
+首先在导言区，加入chapterbib包，带上sectionbib选项。
+
+\item{每章增加参考文献命令}
+
+这个模版的源文件每一章都是一个甚至多个独立的tex文件，
+并在主文件“论文模版示例.tex”中用“include”命令
+\footnote{这个地方要注意不要使用“input”命令，使用这个命令不能实现分章参考文献}
+将其包含在主文件中。
+要在每章的tex文件的最后，加上
+\verb+\ZJUthesisbib{thesisbib}+
+这一条命令，假如是把所有章的参考文献数据库都写在一个文件里，
+比如这个模版中的thesisbib.bib，
+那这个命令的参数在所有章中都是“thesisbib”。
+如果每章的参考文献数据库都有各自的独立的数据库文件，
+那么每章中这个命令的参数就不同。
+
+\item{删去原来的参考文献引用命令}
+
+把全篇最后的参考文献引用命令删去，用不到了。
+
+\item{修改编译命令}
+
+原来生成PDF文件时，bibtex运行是一条命令“bibtex 论文模版示例”，
+现在就要根据有几章有参考文献列几条不同的bibtex命令了。
+即：
+
+{
+\zihao{5}
+\begin{verbatim}
+bibtex .\Chapter\chap1
+bibtex .\Chapter\chap2
+bibtex .\Chapter\chap3
+bibtex .\Chapter\chap4
+bibtex .\Chapter\chap5
+bibtex .\Chapter\chap6
+\end{verbatim}
+}
+
+\end{enumerate}
+
+\section{第X章格式的修改}
+
+这个模版的每一章的章节号直接是阿拉伯数字，
+有同学想用第X章这种格式，
+修改也很简单，根据CTeX自带的帮助文档ctex.pdf，
+只要将ZJUthesis.cls中的第492行由
+
+{
+\zihao{5}
+\verb+\CTEXsetup[name={,}]{chapter}+
+}
+
+修改为：
+
+{
+\zihao{5}
+\verb+\CTEXsetup[name={第,章}]{chapter}+
+}
+
+即可。
+至于字体修改，居中还是偏左，都是在这几行里进行修改，
+具体命令参数意义参考ctex.pdf。
+
+\subsection{后续修订说明}
+LJW同学给我发邮件说，采用上面的办法，目录中标题前缀与内容会重叠。
+这个问题很好解决，只要在导言区或者cls文件中相应位置增加这两句即可：
+
+{
+\zihao{5}
+\begin{verbatim}
+\renewcommand{\cftchapnumwidth}{3.5em}
+\CTEXsetup[nameformat={\bfseries\fangsong\zihao{-3}}]{chapter}
+\end{verbatim}
+}
+
+这两个命令的参考文档：tocloft.pdf和ctex.pdf。
+3.5em可以自行设置。比如4em，3.9em，3.2em等等，以好看为准则。
+
+
+\section{多个参考文献文中标格式}
+
+如果在正文中某处引用多个参考文献，
+且是用数字序号进行标注，
+那么就牵涉一个数字标号间标点符号以及连续数字序号的缩写问题。
+这些设置都在natbib包引用时候的参数中。
+本论文模版的natbib包引用在ZJUthesis.cls文件的第37-41行，有关代码如下：
+
+{
+\zihao{5}
+\begin{verbatim}
+% sort&compress参数用于按引用顺序排列参考文献
+% longnamesfirst参数用于处理长人名顺序，将first name排前面，用于外国人名
+% square参数，引用标号用方括号括起
+% super参数，引用标号为上标格式
+\RequirePackage[sort&compress,longnamesfirst,square,super]{natbib}
+\end{verbatim}
+}
+
+chenchao同学曾发邮件问我如何实现类如[1-6]这种文献引用标注的，
+这个实现就是靠sort\&compress这个参数。
+同时，这些设置最后的形如[2;4;7-9]这种引用标注中用的是分号，
+如果要改用逗号，只要在参数中增加一个comma参考即可，
+即：
+
+{
+\zihao{5}
+\begin{verbatim}
+\RequirePackage[sort&compress,longnamesfirst,square,super,comma]{natbib}
+\end{verbatim}
+}
+
+\section{关于每一章标题头上的空白部分}
+
+有的同学觉得这个模版每一章的标题前到页眉的空白太大，想作调整，
+这个地方的调整也是参考CTeX的帮助文件ctex.pdf，
+其中关于beforeskip和afterskip部分的设置方式，将其设置小一些即可。
+
+此外，还有同学问我如何让每一章标题那页上也有页眉，
+这个问题也比较简单，只要把ZJUthesis.cls第517行至527行对
+plain类型页眉页脚的定义改成与下面紧接着的fancy类型一样就可以了。
+不过这里我并不建议这样做，
+因为每章的第一页还是不加页眉比较好看一些。
+
+
+\section{GBK与UTF版本的问题}
+
+有的同学希望用UTF-8版本，这个版本现在已经解决了GBK与UTF-8版本兼容的问题，
+这个模版同时发布两个版本，分别为GBK版与UTF-8版，
+给不同需要的同学使用，两个版本生成的文档除英文字体略有不同外，
+其余格式是完全相同的，
+且两个版可以互相直接转换。
+
+GBK版与UTF-8版的唯一一点区别在一个字体包的引用。
+在UTF-8版中，使用的是fontspec包，
+在GBK版中，使用的是times包。
+这两个包的引用在ZJUthesis.cls最前面可以找到。
+
+
+\section{2016年新版CTeX的问题}
+
+2015年底，CTeX推出了新版构架，整个版本由1.X升级到了2.X，部分老的命令也相应被放弃，
+针对这些变化，也对该模版进行了一定的修改。
+新增加一个模板ZJUthesisv2，使用新版CTeX的朋友可以使用这个模版。
+
+此外，由于fontspec包的更新，导致CTeX设置字体时会有未知命令的错误。
+这个错误可以通过在调用class包前预定义：
+
+\verb+\expandafter\def\csname CTEX@spaceChar\endcsname{\hspace{1em}}+
+
+进行解决，该解决方案已整合进ZJUthesisv2中去。使用ZJUthesis.cls的朋友，如果遇到
+\verb+CTEX@spaceChar+命令未定义的错误，按上面方法处理即可。
+
+另外，GBK版本暂时没有这个问题。
