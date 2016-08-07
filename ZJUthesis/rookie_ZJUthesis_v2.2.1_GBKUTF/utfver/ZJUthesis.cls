@@ -1,56 +1,56 @@
-%% ÕâÊÇÕã½­´óÑ§Ë¶Ê¿²©Ê¿±ÏÒµÂÛÎÄLaTeXÄ£°æ
+%% è¿™æ˜¯æµ™æ±Ÿå¤§å­¦ç¡•å£«åšå£«æ¯•ä¸šè®ºæ–‡LaTeXæ¨¡ç‰ˆ
 %%
-%% Íõ¶«¾ÙÓÚ2013Äê×«Ğ´²©Ê¿ÂÛÎÄÆÚ¼ä£¬¸ù¾İÉÏÒ»°æ±¾·´À¡Òâ¼û£¬¶ÔÆä½øĞĞÔö²¹ĞŞ¶©¡£
-%% ¸ÃÄ£°åĞŞ¶©²¿·Ö£¬Ö÷ÒªÊÇ³öÏÖÁËÁ½¸ö°æ±¾
-%% GBK°æ±¾ºÍUTF-8°æ±¾
+%% ç‹ä¸œä¸¾äº2013å¹´æ’°å†™åšå£«è®ºæ–‡æœŸé—´ï¼Œæ ¹æ®ä¸Šä¸€ç‰ˆæœ¬åé¦ˆæ„è§ï¼Œå¯¹å…¶è¿›è¡Œå¢è¡¥ä¿®è®¢ã€‚
+%% è¯¥æ¨¡æ¿ä¿®è®¢éƒ¨åˆ†ï¼Œä¸»è¦æ˜¯å‡ºç°äº†ä¸¤ä¸ªç‰ˆæœ¬
+%% GBKç‰ˆæœ¬å’ŒUTF-8ç‰ˆæœ¬
 %% 
-%% ±¾Ä£°æÊÇÔÚ88TeX°æÌá¹©µÄÊıÑ§Ïµ±ÏÒµÂÛÎÄÄ£°æ2006Äê°æ»ù´¡ÉÏ
-%% ÓÉÍõ¶«¾ÙÓÚ2011Äê9-10ÔÂ¼äĞŞ¸Ä³öµÚÒ»°æ£¬»¶Ó­Ìá³öĞŞ¸ÄÒâ¼û£¬»¶Ó­ÔÚ´Ë»ù´¡ÉÏ×ÔĞĞĞŞ¸Ä³¢ÊÔ
-%% ÓÊÏä£ºshuwei1204@163.com
+%% æœ¬æ¨¡ç‰ˆæ˜¯åœ¨88TeXç‰ˆæä¾›çš„æ•°å­¦ç³»æ¯•ä¸šè®ºæ–‡æ¨¡ç‰ˆ2006å¹´ç‰ˆåŸºç¡€ä¸Š
+%% ç”±ç‹ä¸œä¸¾äº2011å¹´9-10æœˆé—´ä¿®æ”¹å‡ºç¬¬ä¸€ç‰ˆï¼Œæ¬¢è¿æå‡ºä¿®æ”¹æ„è§ï¼Œæ¬¢è¿åœ¨æ­¤åŸºç¡€ä¸Šè‡ªè¡Œä¿®æ”¹å°è¯•
+%% é‚®ç®±ï¼šshuwei1204@163.com
 %% 
 %% 
-%% Ìá¹©¸ÃÄ£°æµÄÔËĞĞ»ù´¡
+%% æä¾›è¯¥æ¨¡ç‰ˆçš„è¿è¡ŒåŸºç¡€
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-% °æ±¾ËµÃ÷
+% ç‰ˆæœ¬è¯´æ˜
 \ProvidesClass{ZJUthesis}[2013/01/25 v2.0 ZJUthesis document class]
-% »ùÓÚctexbookÄ£°æ£¬Ôö¼Ó×¨ÓĞÄÚÈİ
+% åŸºäºctexbookæ¨¡ç‰ˆï¼Œå¢åŠ ä¸“æœ‰å†…å®¹
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions
-% 2009/09/13µÄv0.94¼°Ö®ºó°æ±¾Ìá¹©ÁËhyperrefµÄÖ§³Ö£¬Ö±½ÓĞ´ÈëÑ¡Ïî¼´¿É
+% 2009/09/13çš„v0.94åŠä¹‹åç‰ˆæœ¬æä¾›äº†hyperrefçš„æ”¯æŒï¼Œç›´æ¥å†™å…¥é€‰é¡¹å³å¯
 \LoadClass[cs4size,a4paper,fancyhdr,hyperref]{ctexbook}[2009/09/13]
-%% math packages ÊıÑ§¹«Ê½°ü£¬·ÇÊıÑ§Ïµ¿ÉÎŞÊÓÖ®
+%% math packages æ•°å­¦å…¬å¼åŒ…ï¼Œéæ•°å­¦ç³»å¯æ— è§†ä¹‹
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm}
-%% graphicx packages£¬psgragÓÃÓÚĞŞ¸ÄepsÍ¼ÖĞµÄĞÅÏ¢£¬µ«Óëdvipdfm²»¼æÈİ
+%% graphicx packagesï¼Œpsgragç”¨äºä¿®æ”¹epså›¾ä¸­çš„ä¿¡æ¯ï¼Œä½†ä¸dvipdfmä¸å…¼å®¹
 \RequirePackage{graphicx}
-% ĞèÒªtimes°ü£¬ÈÃÓ¢ÎÄ×ÖÌå¿´ÆğÀ´¸üÏñwindowsÏÂ
+% éœ€è¦timesåŒ…ï¼Œè®©è‹±æ–‡å­—ä½“çœ‹èµ·æ¥æ›´åƒwindowsä¸‹
 %\RequirePackage{times}
 \RequirePackage{fontspec}
-% ĞèÒªarray°ü£¬ÅÅĞÕÃûµ¼Ê¦ĞÅÏ¢Ê±ÓÃ
+% éœ€è¦arrayåŒ…ï¼Œæ’å§“åå¯¼å¸ˆä¿¡æ¯æ—¶ç”¨
 \RequirePackage{array}
-% ĞèÒªtocloft°ü£¬µ÷ÕûÄ¿Â¼ÏÔÊ¾¸ñÊ½Ê±Ê¹ÓÃ£¬LaTeX2eÄ¬ÈÏµÄ¸ñÊ½²»·ûºÏÄ£°æÒªÇó
+% éœ€è¦tocloftåŒ…ï¼Œè°ƒæ•´ç›®å½•æ˜¾ç¤ºæ ¼å¼æ—¶ä½¿ç”¨ï¼ŒLaTeX2eé»˜è®¤çš„æ ¼å¼ä¸ç¬¦åˆæ¨¡ç‰ˆè¦æ±‚
 \RequirePackage[titles, subfigure]{tocloft}
-% tocloft°üĞèÒªtocbibind°üÀ´ÅäºÏ£¬Í¬Ê±tocloft°üĞèÒªtitles²ÎÊıÀ´½«ÆäÖÃÎªchapter title
+% tocloftåŒ…éœ€è¦tocbibindåŒ…æ¥é…åˆï¼ŒåŒæ—¶tocloftåŒ…éœ€è¦titleså‚æ•°æ¥å°†å…¶ç½®ä¸ºchapter title
 \RequirePackage[chapter]{tocbibind}
-% ĞèÒªË÷Òı¹¦ÄÜ£¬¼ÓÈëË÷Òı°ü
+% éœ€è¦ç´¢å¼•åŠŸèƒ½ï¼ŒåŠ å…¥ç´¢å¼•åŒ…
 \RequirePackage{makeidx}
-% ²Î¿¼ÎÄÏ×¸ñÊ½µ÷ÕûĞèÒªnatbib°ü
-% sort&compress²ÎÊıÓÃÓÚ°´ÒıÓÃË³ĞòÅÅÁĞ²Î¿¼ÎÄÏ×
-% longnamesfirst²ÎÊıÓÃÓÚ´¦Àí³¤ÈËÃûË³Ğò£¬½«first nameÅÅÇ°Ãæ£¬ÓÃÓÚÍâ¹úÈËÃû
-% square²ÎÊı£¬ÒıÓÃ±êºÅÓÃ·½À¨ºÅÀ¨Æğ
-% super²ÎÊı£¬ÒıÓÃ±êºÅÎªÉÏ±ê¸ñÊ½
+% å‚è€ƒæ–‡çŒ®æ ¼å¼è°ƒæ•´éœ€è¦natbibåŒ…
+% sort&compresså‚æ•°ç”¨äºæŒ‰å¼•ç”¨é¡ºåºæ’åˆ—å‚è€ƒæ–‡çŒ®
+% longnamesfirstå‚æ•°ç”¨äºå¤„ç†é•¿äººåé¡ºåºï¼Œå°†first nameæ’å‰é¢ï¼Œç”¨äºå¤–å›½äººå
+% squareå‚æ•°ï¼Œå¼•ç”¨æ ‡å·ç”¨æ–¹æ‹¬å·æ‹¬èµ·
+% superå‚æ•°ï¼Œå¼•ç”¨æ ‡å·ä¸ºä¸Šæ ‡æ ¼å¼
 \RequirePackage[sort&compress,longnamesfirst,square,super,comma]{natbib}
-% ÉèÖÃÍ¼Æ¬£¬±í¸ñÍ·×ÖÌåÑ¡Ïî¡£¼ä¾à10pt£¬×ÖºÅÎªĞ¡×ÖºÅ£¬¼Ó´Ö×ÖÌå£¬±êÌâÓëÌâÄ¿¼ä¾à1¸ö×Ö·û
+% è®¾ç½®å›¾ç‰‡ï¼Œè¡¨æ ¼å¤´å­—ä½“é€‰é¡¹ã€‚é—´è·10ptï¼Œå­—å·ä¸ºå°å­—å·ï¼ŒåŠ ç²—å­—ä½“ï¼Œæ ‡é¢˜ä¸é¢˜ç›®é—´è·1ä¸ªå­—ç¬¦
 \RequirePackage[margin=10pt,font={small,bf},labelsep=quad]{caption}
-% ´ÖÏßĞÍ±í¸ñĞèÒªµÄÀ©Õ¹°ü
+% ç²—çº¿å‹è¡¨æ ¼éœ€è¦çš„æ‰©å±•åŒ…
 \RequirePackage{booktabs}
-% ¼ÆËã¿í¶ÈÊ¹ÓÃµÄ°ü
+% è®¡ç®—å®½åº¦ä½¿ç”¨çš„åŒ…
 \RequirePackage{calc}
-% ºÏ²¢±í¸ñĞĞÓÃµ½µÄ°ü
+% åˆå¹¶è¡¨æ ¼è¡Œç”¨åˆ°çš„åŒ…
 \RequirePackage{multirow}
-% ÑÕÉ«°ü
+% é¢œè‰²åŒ…
 \RequirePackage{xcolor}
-% PDFÎÄµµ³¬Á´½Ó¼°ÊéÇ©±ê¼Ç£¬¾ßÌåÑ¡ÏîÒâÒå²Î¿¼hyperrefËµÃ÷ÎÄµµ
-% hyperref°üÒª2011Äê°æµÄ²ÅĞĞ
+% PDFæ–‡æ¡£è¶…é“¾æ¥åŠä¹¦ç­¾æ ‡è®°ï¼Œå…·ä½“é€‰é¡¹æ„ä¹‰å‚è€ƒhyperrefè¯´æ˜æ–‡æ¡£
+% hyperrefåŒ…è¦2011å¹´ç‰ˆçš„æ‰è¡Œ
 \hypersetup{CJKbookmarks=true,%
        bookmarksnumbered,%
                linkcolor=blue,%
@@ -58,33 +58,34 @@
             pdfstartview=FitH,
                hidelinks
          }
-% ÎÄµµ¿ªÊ¼µ¼ÈëÄ¬ÈÏÅäÖÃ
+
+% æ–‡æ¡£å¼€å§‹å¯¼å…¥é»˜è®¤é…ç½®
 \AtBeginDocument{\makeatletter\input{ZJUthesis.cfg}\makeatother}
 
-% Ê¹ÓÃgeometry°üÀ´ĞŞ¸ÄÒ³Ãæ³ß´ç
+% ä½¿ç”¨geometryåŒ…æ¥ä¿®æ”¹é¡µé¢å°ºå¯¸
 \RequirePackage[a4paper,%
 top=51pt,bottom=51pt,left=68pt,right=57pt,%
 headsep=14pt,footskip=26pt,%
 footnotesep=10.8pt plus 1fil minus 2.0pt,%
 includehead, includefoot]{geometry}
 
-% ×ÓÍ¼¹¤¾ß°ü
+% å­å›¾å·¥å…·åŒ…
 \RequirePackage{subfigure}
-%  ´óĞ´Ï£À°×ÖÄ¸°ü
+%  å¤§å†™å¸Œè…Šå­—æ¯åŒ…
 \RequirePackage{upgreek}
-% Ã¶¾ÙÀàĞÍ°ü
+% æšä¸¾ç±»å‹åŒ…
 \RequirePackage{enumerate}
 
 
-% ÆæÊıÒ³×ó±ß±ß¾àÊÇ1.5cm
+% å¥‡æ•°é¡µå·¦è¾¹è¾¹è·æ˜¯1.5cm
 %\oddsidemargin -0.14 true cm
-% Å¼ÊıÒ³µÄ×ó±ß¾àÉèÖÃÔò·ÖË«ÃæÄ£Ê½Óëµ¥ÃæÄ£Ê½Á½ÖÖÇé¿ö
+% å¶æ•°é¡µçš„å·¦è¾¹è·è®¾ç½®åˆ™åˆ†åŒé¢æ¨¡å¼ä¸å•é¢æ¨¡å¼ä¸¤ç§æƒ…å†µ
 %\if@twoside
 %  \evensidemargin -0.34 true cm
 %\else
 %  \evensidemargin -0.14 true cm
 %\fi
-% ÉèÖÃÒ³Í·¿Õ°×³ß´ç
+% è®¾ç½®é¡µå¤´ç©ºç™½å°ºå¯¸
 %\topmargin -0.74 true cm
 %\headheight 0.8 true cm
 %\headsep 0.5 true cm
@@ -93,7 +94,7 @@ includehead, includefoot]{geometry}
 %\textwidth 16.6 true cm
 %\footskip 0.9 true cm
 \parskip 0.5ex plus 0.25ex minus 0.25ex
-% cleardoublepageÕâ¸öÃüÁîµÄ¶¨Òå
+% cleardoublepageè¿™ä¸ªå‘½ä»¤çš„å®šä¹‰
 \def\cleardoublepage{%
   \clearpage
   \if@twoside
@@ -108,13 +109,13 @@ includehead, includefoot]{geometry}
     \fi
   \fi}
 
-% Õâ¸öµØ·½¶¨ÒåÒ»Ò³ÖĞ¸¡¶¯¶ÔÏó¿ÉÕ¼µÄ×î´ó±ÈÀı
+% è¿™ä¸ªåœ°æ–¹å®šä¹‰ä¸€é¡µä¸­æµ®åŠ¨å¯¹è±¡å¯å çš„æœ€å¤§æ¯”ä¾‹
 \renewcommand{\textfraction}{0.15}
 \renewcommand{\topfraction}{0.85}
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 
-% ÉèÖÃÓ¢ÎÄ×ÖÌåÎªTimes New Roman
+% è®¾ç½®è‹±æ–‡å­—ä½“ä¸ºTimes New Roman
 \setmainfont{Times New Roman}
 
 \renewcommand{\thetable}{\arabic{chapter}-\arabic{table}}
@@ -129,8 +130,8 @@ includehead, includefoot]{geometry}
 \edef\reserved@b{\csname ver@ZJUthesis.cls\endcsname}
 \expandafter\reserved@a\reserved@b\@nil\relax
 
-% ĞÂÃüÁîNchapterµÄ¶¨Òå
-% ÕâÀïµÄmainmatter¶ÔÓ¦ÓÚtexÎÄµµÖĞµÄ¶¨Òå
+% æ–°å‘½ä»¤Nchapterçš„å®šä¹‰
+% è¿™é‡Œçš„mainmatterå¯¹åº”äºtexæ–‡æ¡£ä¸­çš„å®šä¹‰
 \newcommand\Nchapter[1]{%
   \if@mainmatter%
     \@mainmatterfalse%
@@ -140,7 +141,8 @@ includehead, includefoot]{geometry}
     \chapter{#1}%
   \fi}
 
-% ÏÂ»®ÏßµÄÒ»¸ö¶¨Òå
+
+% ä¸‹åˆ’çº¿çš„ä¸€ä¸ªå®šä¹‰
 \def\ZJU@underline[#1]#2{%
   \underline{\hbox to #1{\hfil#2\hfil}}}
 \def\ZJUunderline{\@ifnextchar[\ZJU@underline\underline}
@@ -182,7 +184,7 @@ includehead, includefoot]{geometry}
 \newcommand\reviewersC[1]{\def\ZJU@value@reviewersC{#1}}
 \newcommand\reviewersD[1]{\def\ZJU@value@reviewersD{#1}}
 \newcommand\reviewersE[1]{\def\ZJU@value@reviewersE{#1}}
-% ÖÆ×÷Ç©ÃûÊ±¼äµÄ±êÇ©
+% åˆ¶ä½œç­¾åæ—¶é—´çš„æ ‡ç­¾
 \newcommand\SignautreDateA[3]{%
 \def\ZJU@value@signaturedateAy{#1}
 \def\ZJU@value@signaturedateAm{#2}
@@ -196,23 +198,23 @@ includehead, includefoot]{geometry}
 \def\ZJU@value@signaturedateCm{#2}
 \def\ZJU@value@signaturedateCd{#3}}
 \newcommand\PutsigndateA{%
-Ç©×ÖÈÕÆÚ£º{\hbox to 3em{\hfil\ZJU@value@signaturedateAy\hfil}}Äê
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateAm\hfil}}ÔÂ
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateAd\hfil}}ÈÕ
+ç­¾å­—æ—¥æœŸï¼š{\hbox to 3em{\hfil\ZJU@value@signaturedateAy\hfil}}å¹´
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateAm\hfil}}æœˆ
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateAd\hfil}}æ—¥
 }
 \newcommand\PutsigndateB{%
-Ç©×ÖÈÕÆÚ£º{\hbox to 3em{\hfil\ZJU@value@signaturedateBy\hfil}}Äê
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateBm\hfil}}ÔÂ
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateBd\hfil}}ÈÕ
+ç­¾å­—æ—¥æœŸï¼š{\hbox to 3em{\hfil\ZJU@value@signaturedateBy\hfil}}å¹´
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateBm\hfil}}æœˆ
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateBd\hfil}}æ—¥
 }
 \newcommand\PutsigndateC{%
-Ç©×ÖÈÕÆÚ£º{\hbox to 3em{\hfil\ZJU@value@signaturedateCy\hfil}}Äê
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateCm\hfil}}ÔÂ
-  {\hbox to 2em{\hfil\ZJU@value@signaturedateCd\hfil}}ÈÕ
+ç­¾å­—æ—¥æœŸï¼š{\hbox to 3em{\hfil\ZJU@value@signaturedateCy\hfil}}å¹´
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateCm\hfil}}æœˆ
+  {\hbox to 2em{\hfil\ZJU@value@signaturedateCd\hfil}}æ—¥
 }
-% ÖÆ×÷·âÃæµÄÃüÁî
+% åˆ¶ä½œå°é¢çš„å‘½ä»¤
 \newcommand\makeCoverPage{%
-  % Õâ¸öµØ·½Ğ´µÄÊÇ·âÃæÉÏµÄ·ÖÀàºÅÓëÑ§ºÅ£¬×ÖÌå×ÖºÅ¿ÉÒÔ¸ü¸Ä
+  % è¿™ä¸ªåœ°æ–¹å†™çš„æ˜¯å°é¢ä¸Šçš„åˆ†ç±»å·ä¸å­¦å·ï¼Œå­—ä½“å­—å·å¯ä»¥æ›´æ”¹
   \pagenumbering{alph}
   \cleardoublepage
   \thispagestyle{empty}
@@ -237,22 +239,22 @@ includehead, includefoot]{geometry}
       \ZJU@label@PersonalID~
       \ZJUunderline[60pt]{\ZJU@value@PersonalID}\\
       }
-      % Õâ¸ö³ß´ç¿ÉÒÔ¸ü¸Ä
+      % è¿™ä¸ªå°ºå¯¸å¯ä»¥æ›´æ”¹
       \vspace{10mm}
-      % Õã½­´óÑ§ËÄ¸ö×Ö
+      % æµ™æ±Ÿå¤§å­¦å››ä¸ªå­—
       \ifpdf
         \includegraphics[width=60.3mm]{./CoverPagepic/ZJDX.pdf} \\
       \else
         \includegraphics[width=60.3mm]{./CoverPagepic/ZJDX.eps} \\
       \fi
-      % Õâ¸ö³ß´ç¿ÉÒÔ¸ü¸Ä
+      % è¿™ä¸ªå°ºå¯¸å¯ä»¥æ›´æ”¹
       \vspace{4mm}
       %% \ZJU@value@school \\  \zihao{-1}
-      % Õâ¸ö²©Ê¿Ñ§Î»ÂÛÎÄÔÚdefÎÄ¼şÖĞÒÑÓĞ£¬µ±È»ÔÚtexÎÄ¼şÖĞ»¹¿ÉÒÔ¸ü¸Ä
+      % è¿™ä¸ªåšå£«å­¦ä½è®ºæ–‡åœ¨defæ–‡ä»¶ä¸­å·²æœ‰ï¼Œå½“ç„¶åœ¨texæ–‡ä»¶ä¸­è¿˜å¯ä»¥æ›´æ”¹
       \centerline{\songti \zihao{-1}{\ZJU@value@degree\ZJU@label@thesis} }
-      % Õâ¸ö³ß´ç¿ÉÒÔ¸ü¸Ä
+      % è¿™ä¸ªå°ºå¯¸å¯ä»¥æ›´æ”¹
       \vspace{4mm}
-      % Õâ¸öµØ·½µ÷ÈëÕã´ó»Õ±ê
+      % è¿™ä¸ªåœ°æ–¹è°ƒå…¥æµ™å¤§å¾½æ ‡
       \ifpdf
         \includegraphics[width=22.8mm]{./CoverPagepic/QSY.pdf}    \\
       \else
@@ -263,13 +265,13 @@ includehead, includefoot]{geometry}
       \vspace{2mm}
 
     \begin{center}
-      % ÂÛÎÄÌâÄ¿²¿·ÖÄÚÈİ£¬¿ÉÒÔĞŞ¸Ä
+      % è®ºæ–‡é¢˜ç›®éƒ¨åˆ†å†…å®¹ï¼Œå¯ä»¥ä¿®æ”¹
       \begin{tabular}{rl}
         {\bfseries\fangsong\zihao{3}\ZJU@label@title:} 
         &
         \bfseries\fangsong\zihao{-2} \ZJUunderline[260pt]{\ZJU@value@title} \\[3mm]
         &
-        % Õâ¸öµØ·½ÊÇ×öµÚ¶şĞĞ±êÌâµÄÅĞ¶Ï£¬Èç¹û±êÌâÒ»ĞĞĞ´²»ÏÂ£¬ÓĞµÚ¶şĞĞÔòÏÔÊ¾£¬·ñÔò²»ÏÔÊ¾
+        % è¿™ä¸ªåœ°æ–¹æ˜¯åšç¬¬äºŒè¡Œæ ‡é¢˜çš„åˆ¤æ–­ï¼Œå¦‚æœæ ‡é¢˜ä¸€è¡Œå†™ä¸ä¸‹ï¼Œæœ‰ç¬¬äºŒè¡Œåˆ™æ˜¾ç¤ºï¼Œå¦åˆ™ä¸æ˜¾ç¤º
         \ifx\ZJU@value@titletl\undefined
           \hfil
         \else
@@ -279,7 +281,7 @@ includehead, includefoot]{geometry}
         &
         {\bf\zihao{-3}\ZJUunderline[260pt]{\ZJU@value@Etitle}}\\[3mm]
         &
-        %Í¬ÑùÊÇÓ¢ÎÄ±êÌâµÄ¶àĞĞÅĞ¶Ï£¬Èç¹ûÒ»ĞĞĞ´²»ÏÂ£¬ÓĞµÚ¶şĞĞÏÔÊ¾£¬·ñÔò²»ÏÔÊ¾µÚ¶şĞĞ
+        %åŒæ ·æ˜¯è‹±æ–‡æ ‡é¢˜çš„å¤šè¡Œåˆ¤æ–­ï¼Œå¦‚æœä¸€è¡Œå†™ä¸ä¸‹ï¼Œæœ‰ç¬¬äºŒè¡Œæ˜¾ç¤ºï¼Œå¦åˆ™ä¸æ˜¾ç¤ºç¬¬äºŒè¡Œ
         \ifx\ZJU@value@Etitletl\undefined
           \hfil
         \else
@@ -293,17 +295,17 @@ includehead, includefoot]{geometry}
         \fi\\
       \end{tabular}
 
-      % Õâ¸ö¾àÀë¿ÉÒÔĞŞ¸Ä
+      % è¿™ä¸ªè·ç¦»å¯ä»¥ä¿®æ”¹
       \vspace{15mm}  
 
-      % ×óÓÒÁ½±ß×ÖÌå²»Í¬£¬¶¨ÒåÁ½¸öºêABÀ´¼ò»¯´úÂë£¬Õâ¸ö¹¦ÄÜÓÃµ½ÁËarrayºê°ü
+      % å·¦å³ä¸¤è¾¹å­—ä½“ä¸åŒï¼Œå®šä¹‰ä¸¤ä¸ªå®ABæ¥ç®€åŒ–ä»£ç ï¼Œè¿™ä¸ªåŠŸèƒ½ç”¨åˆ°äº†arrayå®åŒ…
       \newcolumntype{A}{>{\songti}r<{}}
       \newcolumntype{B}{>{\fangsong}l<{}}
       \zihao{4}
-      \begin{tabular}{A@{£º}B}
+      \begin{tabular}{A@{ï¼š}B}
         \ZJU@label@author & \ZJUunderline[200pt]{\ZJU@value@author} \\[3mm]
         \ZJU@label@supervisor & \ZJUunderline[200pt]{\ZJU@value@supervisor} \\[3mm]
-        % ÅĞ¶ÏÓĞÃ»ÓĞºÏ×÷µ¼Ê¦
+        % åˆ¤æ–­æœ‰æ²¡æœ‰åˆä½œå¯¼å¸ˆ
         \ifx\ZJU@value@cpsupervisor\undefined
         \else
          \ZJU@label@cpsupervisor
@@ -319,25 +321,25 @@ includehead, includefoot]{geometry}
         \ZJU@label@institute & \ZJUunderline[200pt]{\ZJU@value@institute} \\
       \end{tabular}
     \end{center}
-    % ²åÈëÊÊµ±µÄ¿Õ°×
+    % æ’å…¥é€‚å½“çš„ç©ºç™½
     \vfill
-    % ×îºóÒ»Ïî ÂÛÎÄÌá½»ÈÕÆÚ
+    % æœ€åä¸€é¡¹ è®ºæ–‡æäº¤æ—¥æœŸ
     \hfil{\bfseries\songti\zihao{-3}\hspace{4em}\ZJU@label@submitdate%
     \ZJUunderline[150pt]{\ZJU@value@submitdate}}\hfil
   }
 }
 
-%²åÈëÖĞÎÄÌâÃûÒ³
+%æ’å…¥ä¸­æ–‡é¢˜åé¡µ
 \renewcommand\maketitle{%
-  % ĞÂ¿ªÒ»¸öÒ³Ãæ
+  % æ–°å¼€ä¸€ä¸ªé¡µé¢
   \cleardoublepage
-  % ÎŞÒ³Ã¼Ò³½Å
+  % æ— é¡µçœ‰é¡µè„š
   \thispagestyle{empty}
   {
     \linespread{1.3}
     \begin{center}
 
-      % ÏÈ²åÈëÖĞÎÄÂÛÎÄÌâÄ¿
+      % å…ˆæ’å…¥ä¸­æ–‡è®ºæ–‡é¢˜ç›®
       {\bfseries\fangsong\zihao{-2}\ZJUunderline[340pt]{\ZJU@value@title}\\
       \ifx\ZJU@value@titletl\undefined
         \hfil\\
@@ -345,74 +347,74 @@ includehead, includefoot]{geometry}
         \ZJUunderline[300pt]{\ZJU@value@titletl}\\
       \fi}
 
-      % ²åÈëÒ»¶Î¾àÀë
+      % æ’å…¥ä¸€æ®µè·ç¦»
       \vspace{12mm}
 
-      % ²åÈëÕã´ó»Õ±ê
+      % æ’å…¥æµ™å¤§å¾½æ ‡
       \ifpdf
         \includegraphics[width=22.8mm]{./CoverPagepic/QSY.pdf}    \\
       \else
         \includegraphics[width=22.8mm]{./CoverPagepic/QSY.eps}    \\
       \fi
 
-      % ²åÈë¿Õ°×
+      % æ’å…¥ç©ºç™½
       \vspace{8mm}
       {\bfseries\songti\zihao{3}
-      ÂÛÎÄ×÷ÕßÇ©Ãû£º
+      è®ºæ–‡ä½œè€…ç­¾åï¼š
       \ifpdf
           \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_ch.pdf}}
       \else
           \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_ch.eps}}
       \fi
-      {\bfseries\songti\zihao{3}\textcolor{white}{¡£}}\\
+      {\bfseries\songti\zihao{3}\textcolor{white}{ã€‚}}\\
 
       %\hfil\\
-      Ö¸µ¼½ÌÊ¦Ç©Ãû£º}
+      æŒ‡å¯¼æ•™å¸ˆç­¾åï¼š}
       \ifpdf
            \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_ch_s.pdf}}
       \else
            \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_ch_s.eps}}
       \fi
-      {\bfseries\songti\zihao{3}\textcolor{white}{¡£}}\\
+      {\bfseries\songti\zihao{3}\textcolor{white}{ã€‚}}\\
  
             
-      % ²åÈë¿Õ°×
+      % æ’å…¥ç©ºç™½
       \vspace{15mm}
       
-      % ÆÀÔÄÈËĞÅÏ¢
+      % è¯„é˜…äººä¿¡æ¯
       \newcolumntype{A}{>{\songti\zihao{4}}r}
       \newcolumntype{B}{>{\songti\zihao{4}}c}
-      \begin{tabular}{A@{£º}B}
-        ÂÛÎÄÆÀÔÄÈË1 & \ZJUunderline[260pt]{\ZJU@value@reviewersA}\\[2.2mm]
-        ÆÀÔÄÈË2 & \ZJUunderline[260pt]{\ZJU@value@reviewersB}\\[2.2mm]
-        ÆÀÔÄÈË3 & \ZJUunderline[260pt]{\ZJU@value@reviewersC}\\[2.2mm]
-        ÆÀÔÄÈË4 & \ZJUunderline[260pt]{\ZJU@value@reviewersD}\\[2.2mm]
-        ÆÀÔÄÈË5 & \ZJUunderline[260pt]{\ZJU@value@reviewersE}\\
+      \begin{tabular}{A@{ï¼š}B}
+        è®ºæ–‡è¯„é˜…äºº1 & \ZJUunderline[260pt]{\ZJU@value@reviewersA}\\[2.2mm]
+        è¯„é˜…äºº2 & \ZJUunderline[260pt]{\ZJU@value@reviewersB}\\[2.2mm]
+        è¯„é˜…äºº3 & \ZJUunderline[260pt]{\ZJU@value@reviewersC}\\[2.2mm]
+        è¯„é˜…äºº4 & \ZJUunderline[260pt]{\ZJU@value@reviewersD}\\[2.2mm]
+        è¯„é˜…äºº5 & \ZJUunderline[260pt]{\ZJU@value@reviewersE}\\
       \end{tabular}
     
-      % ¼ÓÒ»¶Î¿Õ°×
+      % åŠ ä¸€æ®µç©ºç™½
       \vspace{10mm}
 
-      % ´ğ±çÎ¯Ô±»áÃûµ¥
-      \begin{tabular}{A@{£º}B}
-        ´ğ±çÎ¯Ô±»áÖ÷Ï¯ & \ZJUunderline[260pt]{\ZJU@value@chairman}\\[2.2mm]
-        Î¯Ô±1 & \ZJUunderline[260pt]{\ZJU@value@commissionerA}\\[2.2mm]
-        Î¯Ô±2 & \ZJUunderline[260pt]{\ZJU@value@commissionerB}\\[2.2mm]
-        Î¯Ô±3 & \ZJUunderline[260pt]{\ZJU@value@commissionerC}\\[2.2mm]
-        Î¯Ô±4 & \ZJUunderline[260pt]{\ZJU@value@commissionerD}\\[2.2mm]
-        Î¯Ô±5 & \ZJUunderline[260pt]{\ZJU@value@commissionerE}\\
+      % ç­”è¾©å§”å‘˜ä¼šåå•
+      \begin{tabular}{A@{ï¼š}B}
+        ç­”è¾©å§”å‘˜ä¼šä¸»å¸­ & \ZJUunderline[260pt]{\ZJU@value@chairman}\\[2.2mm]
+        å§”å‘˜1 & \ZJUunderline[260pt]{\ZJU@value@commissionerA}\\[2.2mm]
+        å§”å‘˜2 & \ZJUunderline[260pt]{\ZJU@value@commissionerB}\\[2.2mm]
+        å§”å‘˜3 & \ZJUunderline[260pt]{\ZJU@value@commissionerC}\\[2.2mm]
+        å§”å‘˜4 & \ZJUunderline[260pt]{\ZJU@value@commissionerD}\\[2.2mm]
+        å§”å‘˜5 & \ZJUunderline[260pt]{\ZJU@value@commissionerE}\\
       \end{tabular}
 
     \end{center}
-    % ¼ÓÒ»¶Î¿É±ä¿Õ°×
+    % åŠ ä¸€æ®µå¯å˜ç©ºç™½
       \vfil
-    % ´ğ±çÊ±¼ä
+    % ç­”è¾©æ—¶é—´
       {\songti\zihao{4}\hfill\ZJU@label@defenddate%
       \ZJUunderline[150pt]{\ZJU@value@defenddate}\hspace{3em}}
   }
 }
 
-% Õâ¸öµØ·½²åÈëÁËÓ¢ÎÄ±êÌâÒ³
+% è¿™ä¸ªåœ°æ–¹æ’å…¥äº†è‹±æ–‡æ ‡é¢˜é¡µ
 \newcommand\englishtitle[1]{\def\ZJU@value@englishtitle{#1}}
 \newcommand\englishtitletl[1]{\def\ZJU@value@englishtitletl{#1}}
 \newcommand\EreviewersA[1]{\def\ZJU@value@EreviewersA{#1}}
@@ -428,36 +430,36 @@ includehead, includefoot]{geometry}
 \newcommand\EcommissionerE[1]{\def\ZJU@value@EcommissionerE{#1}}
 
 \newcommand\makeenglishtitle{%
-% ×¢ÒâÕâ¸öcleardoublepageµÄÓÃ·¨
+% æ³¨æ„è¿™ä¸ªcleardoublepageçš„ç”¨æ³•
   \cleardoublepage
   \thispagestyle{empty}
   {
     \linespread{1.3} 
     \begin{center}
-      % Ó¢ÎÄÂÛÎÄÌâÄ¿
+      % è‹±æ–‡è®ºæ–‡é¢˜ç›®
       {\bf\zihao{-3}\ZJUunderline[400pt]{\ZJU@value@englishtitle}\\
       \vspace{1ex}
-      % ÅĞ¶ÏÓ¢ÎÄ±êÌâÓĞÎŞµÚ¶şĞĞ
+      % åˆ¤æ–­è‹±æ–‡æ ‡é¢˜æœ‰æ— ç¬¬äºŒè¡Œ
       \ifx\ZJU@value@englishtitletl\undefined
         \hfil
       \else
         \ZJUunderline[360pt]{\ZJU@value@englishtitletl}
       \fi}
 
-      % ²åÈëÒ»¶Î¿Õ°×¾àÀë
+      % æ’å…¥ä¸€æ®µç©ºç™½è·ç¦»
       \vspace{7mm}
 
-      % Õã´óĞ£»Õ
+      % æµ™å¤§æ ¡å¾½
       \ifpdf
         \includegraphics[width=22.8mm]{./CoverPagepic/QSY.pdf}    \\
       \else
         \includegraphics[width=22.8mm]{./CoverPagepic/QSY.eps}    \\
       \fi
 
-      % ²åÈëÒ»¶Î¿Õ°×¾àÀë
+      % æ’å…¥ä¸€æ®µç©ºç™½è·ç¦»
       \vspace{1mm}
 
-      % ×÷ÕßÓ¢ÎÄÇ©Ãû
+      % ä½œè€…è‹±æ–‡ç­¾å
       {\bf\zihao{3}\hspace{1.7em}Author's signature:
       \ifpdf
 
@@ -466,7 +468,7 @@ includehead, includefoot]{geometry}
       \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_en.eps}}\\
       \fi
       %\hfil\\
-      % µ¼Ê¦Ó¢ÎÄÇ©Ãû
+      % å¯¼å¸ˆè‹±æ–‡ç­¾å
       Supervisor's signature:
       \ifpdf
       \ZJUunderline[120pt]{\includegraphics[width=100pt,height=45pt]{./Signature/sign_en_s.pdf}}\\
@@ -475,11 +477,11 @@ includehead, includefoot]{geometry}
       \fi}
     \end{center}
   
-    % ¼ÓÈëÒ»¶Î¿Õ°×
+    % åŠ å…¥ä¸€æ®µç©ºç™½
     \vspace{7mm}
 
     \zihao{4}
-    % ÂÛÎÄÆÀÔÄÈËÁĞ±í£¨Ó¢ÎÄ£©
+    % è®ºæ–‡è¯„é˜…äººåˆ—è¡¨ï¼ˆè‹±æ–‡ï¼‰
     %\newcolumntype{A}{>{\zihao{4}}r}
     %\newcolumntype{B}{>{\zihao{4}}c}
     \begin{tabular}{rc}
@@ -490,10 +492,10 @@ includehead, includefoot]{geometry}
       & \ZJUunderline[260pt]{\ZJU@value@EreviewersE}\\
     \end{tabular}
 
-    % ¼ÓÈëÒ»¶Î¿Õ°×
+    % åŠ å…¥ä¸€æ®µç©ºç™½
     \vspace{6mm}
 
-    % ´ğ±çÎ¯Ô±»áÃûµ¥£¨Ó¢ÎÄ£©
+    % ç­”è¾©å§”å‘˜ä¼šåå•ï¼ˆè‹±æ–‡ï¼‰
     ~\\[1.2mm]
     \hbox to 2.4em{}Examining Committee Chairperson:\\[1.2mm]
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@Echairman}\\[1.2mm]
@@ -504,14 +506,14 @@ includehead, includefoot]{geometry}
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerD}\\[1.2mm]
     \hbox to 11.4em{}\ZJUunderline[260pt]{\ZJU@value@EcommissionerE}\\
 
-    % ¼ÓÒ»¶Î¿Õ°×
+    % åŠ ä¸€æ®µç©ºç™½
     \vfill
-    % ´ğ±çÈÕÆÚ  
+    % ç­”è¾©æ—¥æœŸ  
     {\hfill Date of oral defence:\ZJUunderline[150pt]{\ZJU@value@defenddateE}\hspace{3em}}
   }
 }
 
-% ¶À´´ÉùÃ÷Óë°æÈ¨Ğ­Òé×ªÈÃÒ³
+% ç‹¬åˆ›å£°æ˜ä¸ç‰ˆæƒåè®®è½¬è®©é¡µ
 \newcommand\makeOSandCPRTpage{%
   \cleardoublepage
   \thispagestyle{empty}
@@ -520,7 +522,7 @@ includehead, includefoot]{geometry}
 
 \newcommand\ZJUfrontmatter{%
   \frontmatter
-  % ÕıÎÄÄÚÈİÇ°µÄ²¿·ÖÒ³Âë¸ñÊ½Îª´óĞ´ÂŞÂíÊı×Ö
+  % æ­£æ–‡å†…å®¹å‰çš„éƒ¨åˆ†é¡µç æ ¼å¼ä¸ºå¤§å†™ç½—é©¬æ•°å­—
 
   \pagenumbering{Roman}
 }
@@ -533,10 +535,10 @@ includehead, includefoot]{geometry}
   \backmatter
 }
 
-% ¿ÕÒ³Ã¼Ò³µÄ¸ñÊ½¶¨Òå
-% Ã¿Ò»¸öchapter¿ªÊ¼µÄµÚÒ»Ò³µÄÒ³Ã¼Ò³½ÅÑùÊ½ÎªplainÑùÊ½
+% ç©ºé¡µçœ‰é¡µçš„æ ¼å¼å®šä¹‰
+% æ¯ä¸€ä¸ªchapterå¼€å§‹çš„ç¬¬ä¸€é¡µçš„é¡µçœ‰é¡µè„šæ ·å¼ä¸ºplainæ ·å¼
 \fancypagestyle{plain}{%
-  \fancyhf{}% ÏÈÇå³ıµ±Ç°Ò³ÃæµÄÒ³Ã¼Ò³½Å¶¨Òå£¬ÊÇfancyhdr°üÖĞµÄ¶¨Òå
+  \fancyhf{}% å…ˆæ¸…é™¤å½“å‰é¡µé¢çš„é¡µçœ‰é¡µè„šå®šä¹‰ï¼Œæ˜¯fancyhdråŒ…ä¸­çš„å®šä¹‰
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%
   \if@twoside
@@ -547,11 +549,11 @@ includehead, includefoot]{geometry}
   \fi
 }
 
-% L¿¿×ó R¿¿ÓÒ OÆæÊıÒ³ EÅ¼ÊıÒ³
-% Ò»°ãÒ³µÄÒ³Ã¼Ò³½ÅÑùÊ½
+% Lé å·¦ Ré å³ Oå¥‡æ•°é¡µ Eå¶æ•°é¡µ
+% ä¸€èˆ¬é¡µçš„é¡µçœ‰é¡µè„šæ ·å¼
 \pagestyle{fancy}
-  \fancyhf{} %fancyhfÊµ¼ÊÊÇfancyheadÓëfancyfootµÄºÏÌå£¬ËüµÄ²ÎÊıÓÃHºÍFÖ¸¶¨
-  % ·Öµ¥Ë«ÃæÅĞ¶ÏÒ³Ã¼µÄÉèÖÃ
+  \fancyhf{} %fancyhfå®é™…æ˜¯fancyheadä¸fancyfootçš„åˆä½“ï¼Œå®ƒçš„å‚æ•°ç”¨Hå’ŒFæŒ‡å®š
+  % åˆ†å•åŒé¢åˆ¤æ–­é¡µçœ‰çš„è®¾ç½®
   \if@twoside
     \fancyhead[CE]{\songti\zihao{-5}\ZJU@value@school\ZJU@value@degree\ZJU@label@thesis}
     \fancyhead[CO]{\songti\zihao{-5}\leftmark}
@@ -563,7 +565,7 @@ includehead, includefoot]{geometry}
     \fancyfoot[C]{\zihao{-5} ~\thepage~}
   \fi
 
-% ÉèÖÃÕÂ½Ú±êÌâ¸ñÊ½
+% è®¾ç½®ç« èŠ‚æ ‡é¢˜æ ¼å¼
 \CTEXsetup[name={,}]{chapter}
 \CTEXsetup[number={\arabic{chapter}}]{chapter}
 \CTEXsetup[format={\noindent}]{chapter}
@@ -578,15 +580,15 @@ includehead, includefoot]{geometry}
 \CTEXsetup[format={\noindent}]{subsubsection}
 \CTEXsetup[nameformat={\bfseries\zihao{-4}}]{subsubsection}
 \CTEXsetup[titleformat={\bfseries\zihao{-4}}]{subsubsection}
-% ´Ë´¦ÕÂ½Ú±êÌâÇ°ºó¿Õ°×¾àÀë²ÉÓÃÁËÄ¬ÈÏÉèÖÃ£¬ÈçĞèĞŞ¸ÄÇë²Î¿¼ctex²Î¿¼ÎÄµµctex.pdf
+% æ­¤å¤„ç« èŠ‚æ ‡é¢˜å‰åç©ºç™½è·ç¦»é‡‡ç”¨äº†é»˜è®¤è®¾ç½®ï¼Œå¦‚éœ€ä¿®æ”¹è¯·å‚è€ƒctexå‚è€ƒæ–‡æ¡£ctex.pdf
 
-% ÕıÎÄ²¿·ÖÎÄ×ÖµÄĞĞ¾àÉèÖÃ
+% æ­£æ–‡éƒ¨åˆ†æ–‡å­—çš„è¡Œè·è®¾ç½®
 \linespread{1.5}
 
-% È¥µôÄ¿Â¼ÖĞµÄ¿Õ¸ñ×Ö·û
+% å»æ‰ç›®å½•ä¸­çš„ç©ºæ ¼å­—ç¬¦
 \addtocontents{toc}{\let\string\CTEX@spaceChar\relax}
 
-% ÉèÖÃ¸¡¶¯¶ÔÏóµÄ²ÎÊı
+% è®¾ç½®æµ®åŠ¨å¯¹è±¡çš„å‚æ•°
 \setcounter{topnumber}{4}
 \setcounter{totalnumber}{5}
 
@@ -595,42 +597,42 @@ includehead, includefoot]{geometry}
 \setlength{\intextsep}{8pt plus 3pt minus 2pt}
 
 
-% ¿±Îó±í
+% å‹˜è¯¯è¡¨
 \newenvironment{corrigenda}
   {\Nchapter{\ZJU@label@corrigenda}}
   {}
 
-% ÖÂĞ»
+% è‡´è°¢
 \renewenvironment{thanks}
   {\Nchapter{\ZJU@label@thanks}}
   {}
 
-% ĞòÑÔ
+% åºè¨€
 \newenvironment{preface}
   {\Nchapter{\ZJU@label@preface}}
   {}
 
-% ÕªÒª
+% æ‘˜è¦
 \newenvironment{abstract}
   {\Nchapter{\ZJU@label@abstract}}
   {}
 
-%¹Ø¼ü×Ö
+%å…³é”®å­—
 \newcommand\keywords[1]{%
   \vspace{2ex}\noindent{\heiti \ZJU@label@keywords} #1}
 
-%Ó¢ÎÄÕªÒª
+%è‹±æ–‡æ‘˜è¦
 \newenvironment{englishabstract}
   {\Nchapter{\ZJU@label@englishabstract}}
   {}
 
-%Ó¢ÎÄ¹Ø¼ü×Ö
+%è‹±æ–‡å…³é”®å­—
 \newcommand\englishkeywords[1]{%
   \vspace{2ex}\noindent{\bf \ZJU@label@englishkeywords} #1}
 
-% Éú³ÉÄ¿Â¼£¨ÂÛÎÄÖĞ³ÆÄ¿´Î£©
+% ç”Ÿæˆç›®å½•ï¼ˆè®ºæ–‡ä¸­ç§°ç›®æ¬¡ï¼‰
 \newcommand\ZJUcontents{%
-  % ĞŞ¸ÄÄ¿Â¼µÄ¸ñÊ½
+  % ä¿®æ”¹ç›®å½•çš„æ ¼å¼
   \renewcommand{\cftchapfont}{\fangsong\zihao{-4}}
   \renewcommand{\cftchapleader}{\cftdotfill{\cftdot}}
   \renewcommand{\cftchapdotsep}{\cftdotsep}
@@ -654,7 +656,7 @@ includehead, includefoot]{geometry}
   \addtocontents{toc}{\cftpagenumberson{chapter}}
 }
 
-% ²åÍ¼Ä¿Â¼
+% æ’å›¾ç›®å½•
 \newcommand\ZJUListofFigures{%
   \renewcommand{\cftfigfont}{\fangsong\zihao{-4}}
   \renewcommand{\cftfigleader}{\cftdotfill{\cftdot}}
@@ -664,7 +666,7 @@ includehead, includefoot]{geometry}
   \listoffigures
 }
 
-% ¸½±íÄ¿Â¼
+% é™„è¡¨ç›®å½•
 \newcommand\ZJUListofTables{%
   \renewcommand{\cfttabfont}{\fangsong\zihao{-4}}
   \renewcommand{\cfttableader}{\cftdotfill{\cftdot}}
@@ -674,12 +676,12 @@ includehead, includefoot]{geometry}
   \listoftables
 }
 
-% ËõĞ´¡¢·ûºÅÇåµ¥¡¢ÊõÓï±í
+% ç¼©å†™ã€ç¬¦å·æ¸…å•ã€æœ¯è¯­è¡¨
 \newenvironment{ListofSymbol}
 {\Nchapter{\ZJU@label@symbol}}
 {}
 
-% ²Î¿¼ÎÄÏ×²¿·Ö
+% å‚è€ƒæ–‡çŒ®éƒ¨åˆ†
 \DeclareRobustCommand\citenum
    {\begingroup
      \NAT@swatrue\let\NAT@ctype\z@\NAT@parfalse\let\textsuperscript\relax
@@ -697,27 +699,27 @@ includehead, includefoot]{geometry}
 
 \makeindex
 
-% Ë÷Òı
+% ç´¢å¼•
 \newcommand\ZJUindex{%
   \cleardoublepage
-  % ²»ÓÃÕâÒ»¾ä»áÔì³ÉË÷ÒıµÄÊéÇ©Î»ÖÃ´íÎó
+  % ä¸ç”¨è¿™ä¸€å¥ä¼šé€ æˆç´¢å¼•çš„ä¹¦ç­¾ä½ç½®é”™è¯¯
   \phantomsection
   \printindex
 }
 
-% ×÷Õß¼òÀú
+% ä½œè€…ç®€å†
 \newenvironment{resume}
   {\Nchapter{\ZJU@label@resume}}
   {}
 
-% ·¢±íÎÄÕÂÄ¿Â¼
+% å‘è¡¨æ–‡ç« ç›®å½•
 \newenvironment{publications}
   {\Nchapter{\ZJU@label@publications}}
   {}
 
 
 
-% 2006Äê°æÄ£°æÄÚÎ´Ê¹ÓÃµ½µÄÄÚÈİ
+% 2006å¹´ç‰ˆæ¨¡ç‰ˆå†…æœªä½¿ç”¨åˆ°çš„å†…å®¹
 \newenvironment{resumesection}[1]
   {{\noindent\normalfont\bfseries #1}
    \list{}{\labelwidth\z@
@@ -739,7 +741,7 @@ includehead, includefoot]{geometry}
   \setbox0=\hbox{X\lower.5ex\hbox{\kern-.15em\reflect{E}}\kern-.1667em \TeX}%
   \dp0=0pt\ht0=0pt\box0 }
 
-% ÉèÖÃÏÔÊ¾µ½4¼¶±êÌâ chapter section subsection subsubsection£¬¿ÉÊÊµ±¼õĞ¡
+% è®¾ç½®æ˜¾ç¤ºåˆ°4çº§æ ‡é¢˜ chapter section subsection subsubsectionï¼Œå¯é€‚å½“å‡å°
 \setcounter{secnumdepth}{4}
 \newtheoremstyle{break}% name
   {}%      Space above, empty = `usual value'

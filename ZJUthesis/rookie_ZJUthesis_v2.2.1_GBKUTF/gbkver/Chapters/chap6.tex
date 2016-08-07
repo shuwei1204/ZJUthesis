@@ -286,8 +286,10 @@ LJW同学给我发邮件说，采用上面的办法，目录中标题前缀与内容会重叠。
 
 {
 \zihao{5}
-\verb++\renewcommand{\cftchapnumwidth}{3.5em}+
-\verb++\CTEXsetup[nameformat={\bfseries\fangsong\zihao{-3}}]{chapter}+
+\begin{verbatim}
+\renewcommand{\cftchapnumwidth}{3.5em}
+\CTEXsetup[nameformat={\bfseries\fangsong\zihao{-3}}]{chapter}
+\end{verbatim}
 }
 
 这两个命令的参考文档：tocloft.pdf和ctex.pdf。
@@ -352,3 +354,112 @@ GBK版与UTF-8版的唯一一点区别在一个字体包的引用。
 在GBK版中，使用的是times包。
 这两个包的引用在ZJUthesis.cls最前面可以找到。
 
+
+\section{2016年新版CTeX的问题}
+
+2015年底，CTeX推出了新版构架，整个版本由1.X升级到了2.X，部分老的命令也相应被放弃，
+针对这些变化，也对该模版进行了一定的修改。
+新增加一个模板ZJUthesisv2，使用新版CTeX的朋友可以使用这个模版。
+
+此外，由于fontspec包的更新，导致CTeX设置字体时会有未知命令的错误。
+这个错误可以通过在调用class包前预定义：
+
+\verb+\expandafter\def\csname CTEX@spaceChar\endcsname{\hspace{1em}}+
+
+进行解决，该解决方案已整合进ZJUthesisv2中去。使用ZJUthesis.cls的朋友，如果遇到
+\verb+CTEX@spaceChar+命令未定义的错误，按上面方法处理即可。
+
+另外，GBK版本暂时没有这个问题。
+
+
+\section{非正文部分不带页眉的方法}
+
+HQS同学给我发邮件说，他们系要求有页眉的章节自正文开始，而这个模板是全文都带有页眉的，这个问题怎么解决呢。也比较简单，按如下操作。
+
+首先，把cls文件中的全局的关于一般页的页眉的设置代码进行修改。原来是这样的：
+
+{
+\zihao{-5}
+\begin{verbatim}
+\fancypagestyle{plain}{%
+\fancyhf{}% 先清除当前页面的页眉页脚定义，是fancyhdr包中的定义
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+\if@twoside
+\fancyfoot[RO]{\zihao{-5} ~\thepage~}
+\fancyfoot[LE]{\zihao{-5} ~\thepage~}
+\else
+\fancyfoot[C]{\zihao{-5} ~\thepage~}
+\fi
+}
+
+% L靠左 R靠右 O奇数页 E偶数页
+% 一般页的页眉页脚样式
+\pagestyle{fancy}
+\fancyhf{} %fancyhf实际是fancyhead与fancyfoot的合体，它的参数用H和F指定
+% 分单双面判断页眉的设置
+\if@twoside
+\fancyhead[CE]{\songti\zihao{-5}\ZJU@value@school\ZJU@value@degree\ZJU@label@thesis}
+\fancyhead[CO]{\songti\zihao{-5}\leftmark}
+\fancyfoot[RO]{\zihao{-5} ~\thepage~}
+\fancyfoot[LE]{\zihao{-5} ~\thepage~}
+\else
+\fancyhead[L]{\songti\zihao{-5}\ZJU@value@school\ZJU@value@degree\ZJU@label@thesis}
+\fancyhead[R]{\songti\zihao{-5}\leftmark}
+\fancyfoot[C]{\zihao{-5} ~\thepage~}
+\fi
+\end{verbatim}
+}
+
+每一章的第一页是没有页眉的，这部分就不需要进行修改了。一般页需要把页眉设置部分删去，同时，把页眉线的宽度设置为零，就像下面这样。
+
+{
+\zihao{-5}
+\begin{verbatim}
+% L靠左 R靠右 O奇数页 E偶数页
+% 一般页的页眉页脚样式
+\pagestyle{fancy}
+\fancyhf{} %fancyhf实际是fancyhead与fancyfoot的合体，它的参数用H和F指定
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+% 分单双面判断页眉的设置
+\if@twoside
+\fancyfoot[RO]{\zihao{-5} ~\thepage~}
+\fancyfoot[LE]{\zihao{-5} ~\thepage~}
+\else
+\fancyfoot[C]{\zihao{-5} ~\thepage~}
+\fi
+\end{verbatim}
+}
+
+只是这样修改的话，会发现正文中也没有页眉了，这怎么办？也很简单，在进入正文前把它改回来就行了，这里直接在\verb+\ZJUmainmatter+的定义中添加如下代码：
+
+{
+\zihao{-5}
+\begin{verbatim}
+ % 修改页眉页脚
+ \pagestyle{fancy}
+\fancyhf{} %fancyhf实际是fancyhead与fancyfoot的合体，它的参数用H和F指定
+\renewcommand{\headrulewidth}{0.4pt}%
+\renewcommand{\footrulewidth}{0pt}%
+% 分单双面判断页眉的设置
+\if@twoside
+\fancyhead[CE]{\songti\zihao{-5}\ZJU@value@school\ZJU@value@degree\ZJU@label@thesis}
+\fancyhead[CO]{\songti\zihao{-5}\leftmark}
+\fancyfoot[RO]{\zihao{-5} ~\thepage~}
+\fancyfoot[LE]{\zihao{-5} ~\thepage~}
+\else\fancyhead[L]{\songti\zihao{-5}\ZJU@value@school\ZJU@value@degree\ZJU@label@thesis}
+\fancyhead[R]{\songti\zihao{-5}\leftmark}
+\fancyfoot[C]{\zihao{-5} ~\thepage~}
+\fi
+\end{verbatim}
+}
+
+这里代码的区别就在于把页眉线宽度改回0.4pt，这样正文页中的页眉就又出现了。
+
+这个修改好的cls文件命名为ZJUthesisv2\_1.cls
+
+
+\section{第三方的参考文献模板}
+
+近一年国内也出现了几个制作符合GB/T7714-2105文献格式引用标准TeXer，这个模板也可以直接引用这些参考文献格式定义文件，使用方法也很简单，直接在cls文件中，把\verb+  \bibliographystyle{ZJUthesis}+改成\verb+  \bibliographystyle{XXX}+即可。这里的“XXX”就是第三方提供的bst格式文件的文件名。这些bst文件的提供者有Lee Zepeng（https://github.com/ustctug/gbt-7714-2015），Hu Haixing（https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style），胡振震（http://bbs.ctex.org/forum.php?mod=viewthread\&tid=152755）等。

@@ -58,6 +58,7 @@
             pdfstartview=FitH,
                hidelinks
          }
+
 % 文档开始导入默认配置
 \AtBeginDocument{\makeatletter\input{ZJUthesis.cfg}\makeatother}
 
@@ -139,6 +140,7 @@ includehead, includefoot]{geometry}
   \else
     \chapter{#1}%
   \fi}
+
 
 % 下划线的一个定义
 \def\ZJU@underline[#1]#2{%
