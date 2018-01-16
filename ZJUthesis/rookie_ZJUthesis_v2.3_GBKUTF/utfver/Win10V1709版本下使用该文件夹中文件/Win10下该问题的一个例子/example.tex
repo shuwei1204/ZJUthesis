@@ -1,0 +1,44 @@
+\documentclass{article}  
+\usepackage{xeCJK}  
+\setCJKmainfont{WenQuanYi Micro Hei}
+\setCJKmonofont{WenQuanYi Micro Hei}  
+\begin{document}
+\title{example}
+
+\maketitle
+
+这是一段话，如果中间有一个不能被打断的长字符串，比如这个：\\
+http://longlonglonglonglonglonglong/。如果不在这个长字符串前打上断行符\verb+\\+，在Win10 64bit（1709版本）下，MiKTeX(2.9.6500版)的xelatex就会报错。但在Win7下无报错崩溃问题。
+
+I found there are something wrong when I typed a long word (like: http://longlonglonglonglonglonglong/) which cannot be splitted in a sentence mixed with Chinese characters and English words, and the long word make a overfull at the tail of this line. Under Windows 10 64bit(the newest 1709 version), the MiKTeX xelatex(Version 2.9.6500, 64bit) program will crash. But When I type a line break command "\verb+\\+" before this long word and prevent a overfull, it words well. But it works well under Windows 7.
+
+The crash infomation prints out this:
+
+\begin{verbatim}
+Overfull \hbox (110.24875pt too wide) in paragraph at lines 10--12
+[]\TU/SimSun(0)/m/n/10 杩?
+Sorry, but xelatex did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:/Users/wangdj/AppData/Local/MiKTeX/2.9/miktex/log/xelatex.log
+
+You may want to visit the MiKTeX project page, if you need help.
+\end{verbatim}
+
+the xelatex.log print out this:
+
+\begin{verbatim}
+2018-01-03 10:16:42,219+0800 INFO  xelatex - starting with command line: xelatex example.tex
+2018-01-03 10:16:42,235+0800 INFO  xelatex - allowing known shell commands
+2018-01-03 10:16:42,235+0800 INFO  xelatex - enabling input (output) from (to) processes
+2018-01-03 10:16:44,313+0800 FATAL xelatex - No space left on device
+2018-01-03 10:16:44,313+0800 FATAL xelatex - Info: 
+2018-01-03 10:16:44,313+0800 FATAL xelatex - Source: libraries\miktex\texandfriends\include\miktex\c4p\C4P.h
+2018-01-03 10:16:44,313+0800 FATAL xelatex - Line: 477
+2018-01-03 10:16:44,344+0800 INFO  xelatex - finishing with exit code 1
+\end{verbatim}
+
+
+
+\end{document}  
