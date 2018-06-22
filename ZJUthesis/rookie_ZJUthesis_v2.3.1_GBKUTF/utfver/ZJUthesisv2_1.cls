@@ -65,7 +65,7 @@
                hidelinks
          }
 % 文档开始导入默认配置
-\AtBeginDocument{\makeatletter\input{ZJUthesis.cfg}\makeatother}
+\AtBeginDocument{\makeatletter\input{ZJUthesisv2.cfg}\makeatother}
 
 % 使用geometry包来修改页面尺寸
 \RequirePackage[a4paper,%
